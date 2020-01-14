@@ -1,13 +1,13 @@
 package edu.kis.vh.nursery.list;
 
 
-
- // Class representing integer linked list with nodes
+/**
+ * Class representing integer linked list with nodes
+ */
 public class IntLinkedList {
 
 	public static final int NEGATIVE = -1;
 	Node last;
-	int I;
 
     /**
      * Method that pushes a given variable to the linked list
@@ -47,7 +47,7 @@ public class IntLinkedList {
 	public int top() {
 		if (isEmpty())
 			return NEGATIVE;
-		return last.value;
+		return last.getValue();
 	}
 
 	
@@ -58,7 +58,7 @@ public class IntLinkedList {
 	public int pop() {
 		if (isEmpty())
 			return NEGATIVE;
-		int ret = last.value;
+		int ret = last.getValue();
 		last = last.prev;
 		return ret;
 	}
