@@ -1,10 +1,11 @@
 package edu.kis.vh.nursery.list;
 
+import edu.kis.vh.nursery.StackInterface;
 
 /**
  * Class representing integer linked list with nodes
  */
-public class IntLinkedList {
+public class IntLinkedList implements StackInterface {
 
 	public static final int NEGATIVE = -1;
 	Node last;
@@ -13,6 +14,7 @@ public class IntLinkedList {
      * Method that pushes a given variable to the linked list
      * @param i value to push to the list
      */
+	@Override
 	public void push(int i) {
 		if (last == null)
 			last = new Node(i);
@@ -27,6 +29,7 @@ public class IntLinkedList {
      * Method checking if the list is empty
      * @return true if list is empty or true otherwise
      */
+	@Override
 	public boolean isEmpty() {
 		return last == null;
 	}
@@ -34,6 +37,7 @@ public class IntLinkedList {
 	/**
      * Method checking if the list is full
      */
+	@Override
 	public boolean isFull() {
 		return false;
 	}
@@ -44,6 +48,7 @@ public class IntLinkedList {
      * Method returning last value in list
      * @return -1 when it's empty or top value
      */
+	@Override
 	public int top() {
 		if (isEmpty())
 			return NEGATIVE;
@@ -55,6 +60,7 @@ public class IntLinkedList {
      * Method deleting last value from list and returning it's value
      * @return -1 when it's empty or top value
      */
+	@Override
 	public int pop() {
 		if (isEmpty())
 			return NEGATIVE;
@@ -62,5 +68,13 @@ public class IntLinkedList {
 		last = last.prev;
 		return ret;
 	}
+
+
+
+	@Override
+	public boolean callCheck() {
+		return false;
+	}
+
 
 }
